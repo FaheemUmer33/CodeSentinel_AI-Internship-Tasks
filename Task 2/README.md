@@ -1,79 +1,67 @@
-# 🏷️ Task 2: Customer Segmentation using K-Means
+# 🌸 Task 2: Iris Flower Classification
 
 ## 📋 Project Overview
-This project implements **Customer Segmentation** using the **Mall Customer Dataset**.  
-The goal is to group customers into distinct clusters based on their characteristics (e.g., Age, Income, Spending Score) using **K-Means Clustering**.  
-This segmentation helps businesses understand their customers better and design targeted marketing strategies.
+This project implements a **Classification Model** using the **Iris dataset**, one of the most well-known datasets in machine learning.  
+The goal is to classify iris flowers into three species — *Setosa, Versicolor, and Virginica* — based on their features (*sepal length, sepal width, petal length, petal width*).  
+
+Multiple machine learning models were trained, evaluated, and compared to identify the best-performing classifier.
 
 ---
 
 ## 📁 Dataset
-- **Source**: [Kaggle - Mall Customer Dataset](https://www.kaggle.com/vetrirah/customer)  
-- **File Used**: `Train.csv`
-
-**Features:**
-- `CustomerID`: Unique customer ID  
-- `Gender`: Male/Female  
-- `Age`: Age of customer  
-- `Annual Income (k$)`: Income of customer  
-- `Spending Score (1-100)`: Spending behavior  
+- **Source**: [Iris Dataset - UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/iris)  
+- **Features**:
+  - `sepal length (cm)`  
+  - `sepal width (cm)`  
+  - `petal length (cm)`  
+  - `petal width (cm)`  
+- **Target**: Species (*Setosa, Versicolor, Virginica*)
 
 ---
 
 ## ⚙️ Steps Performed
-1. **Data Loading & Cleaning**
-   - Imported dataset using pandas.
-   - Checked for missing values and duplicates.
-   - Encoded categorical features (`Gender`).
+1. **Data Loading & Exploration**
+   - Loaded Iris dataset using scikit-learn & pandas.
+   - Checked dataset shape, unique classes, and summary statistics.
+   - Visualized feature distributions with histograms and pair plots.
 
-2. **Exploratory Data Analysis (EDA)**
-   - Visualized distributions of age, gender, income, and spending score.
-   - Scatterplots and pairplots for relationships between features.
+2. **Data Preprocessing**
+   - Handled missing values (if any).
+   - Encoded target labels.
+   - Scaled features using StandardScaler.
 
-3. **Feature Scaling**
-   - Standardized features for better clustering performance.
+3. **Model Training**
+   - Implemented multiple classification algorithms:
+     - Logistic Regression  
+     - Decision Tree Classifier  
+     - K-Nearest Neighbors (KNN)
 
-4. **Optimal Clusters Selection**
-   - Used **Elbow Method** and **Silhouette Score** to determine the best `k`.
+4. **Model Evaluation**
+   - Compared models using accuracy scores.
+   - Generated **confusion matrix** & **classification reports**.
+   - Visualized decision boundaries for better interpretability.
 
-5. **K-Means Clustering**
-   - Applied K-Means to group customers into meaningful clusters.
-
-6. **Visualization**
-   - 2D & 3D scatter plots of clusters.
-   - Heatmaps of cluster centroids.
-
-7. **Model Saving**
-   - Best clustering model saved using `joblib`.
+5. **Model Selection**
+   - Identified the best-performing model based on accuracy and evaluation metrics.
 
 ---
 
 ## 📊 Results
-- Identified **clear customer groups**:
-  - High Income - High Spending  
-  - High Income - Low Spending  
-  - Low Income - High Spending  
-  - Average Customers  
-- Visualization showed distinct separations between clusters.  
+- Achieved high classification accuracy (>90%) across models.  
+- Decision boundaries showed **clear separation of species**.  
+- Classification report highlighted precision, recall, and F1-score for each class.  
 
 ---
 
-## 🚀 Gradio App
-An interactive **Gradio Interface** is provided to:
-- Upload customer details (Age, Gender, Income, Spending Score).
-- Get the **predicted cluster**.
-- Explore **cluster visualizations** (scatter plots, heatmaps, and comparisons).
+## 🚀 Deliverables
+- **Jupyter Notebook** with full code and model comparison.
+- **Visualizations**: pair plots, confusion matrices, and decision boundaries.
+- **Saved Models** for future use (joblib).
 
-Run the app:
-```bash
-python app.py
+---
 
-or in Jupyter/Colab:
+## 📌 Tech Stack
+- **Language**: Python  
+- **Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn  
 
-demo.launch()
-
-📌 Tech Stack
-
-Language: Python
-
-Libraries: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Gradio, Joblib
+---
